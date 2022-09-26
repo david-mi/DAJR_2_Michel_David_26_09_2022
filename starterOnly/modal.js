@@ -1,9 +1,14 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+const navToggleButton = document.querySelector(".icon");
+
+// toggle nav event
+navToggleButton.addEventListener("click", handleTopNavStyle);
+/** Handle topNav style */
+function handleTopNavStyle() {
+  const topNav = document.getElementById("myTopnav");
+  if (topNav.className === "topnav") {
+    topNav.className += " responsive";
   } else {
-    x.className = "topnav";
+    topNav.className = "topnav";
   }
 }
 
