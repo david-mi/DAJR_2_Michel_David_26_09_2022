@@ -24,7 +24,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 /** Displays form modal on click */
 function launchModal() {
-  modalbg.style.display = "block";
+  modalbg.classList.remove("select-hide");
 }
 
 
