@@ -5,6 +5,7 @@ const formData = document.querySelectorAll(".formData");
 const formDataInputs = document.querySelectorAll(".formData input");
 const form = document.querySelector("form[name=reserve]");
 const navToggleButton = document.querySelector(".icon");
+const closeModalButton = document.querySelector(".close");
 
 // toggle nav event
 navToggleButton.addEventListener("click", handleTopNavStyle);
@@ -27,7 +28,11 @@ function launchModal() {
   modalbg.classList.remove("select-hide");
 }
 
+closeModalButton.addEventListener("click", handlecloseModalButton);
 
+function handlecloseModalButton() {
+  modalbg.classList.add("select-hide");
+}
 
 
 
