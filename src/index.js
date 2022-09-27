@@ -1,5 +1,5 @@
-import * as validate from "./validator.js";
-import { resetForm, handleFormSubmit } from "./formActions.js";
+import * as validate from "./form/validators/validator.js";
+import { resetForm, handleFormSubmit } from "./form/formActions.js";
 // instanciated of DomSelectors class
 import dom from "./domSelectors.js";
 

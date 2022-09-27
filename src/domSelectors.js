@@ -16,6 +16,4 @@ class DomSelectors {
   }
 }
 
-const dom = new DomSelectors;
-
-export default dom;
+export default new DomSelectors();

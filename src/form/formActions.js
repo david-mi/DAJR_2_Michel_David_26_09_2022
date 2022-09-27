@@ -1,4 +1,4 @@
-import dom from "./domSelectors.js";
+import dom from "../domSelectors.js";
 import { formModel, defaultFormModel } from "./formModel.js";
 
 function triggerInputEvents() {

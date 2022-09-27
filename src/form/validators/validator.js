@@ -1,6 +1,6 @@
 import { emailRegex, nameRegex, birthDateRegex, tournamentCountRegex } from "./regex.js";
-import { formModel } from "./formModel.js";
-import { hydrateFormModel } from "./formActions.js";
+import { formModel } from "../formModel.js";
+import { hydrateFormModel } from "../formActions.js";
 
 function displayError(inputNodeContainer, errorMessage) {
   inputNodeContainer.dataset.error = errorMessage;
