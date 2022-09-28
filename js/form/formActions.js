@@ -1,5 +1,6 @@
 import dom from "../domSelectors.js";
 import { formModel, defaultFormModel } from "./formModel.js";
+import { appendConfirmation } from "../confirmation.js";
 
 function triggerInputEvents() {
   dom.formInputs.forEach(input => input.dispatchEvent(new Event("input")));
@@ -26,7 +27,6 @@ export function handleFormBody() {
   for (const key in formModel) {
     formBody[key] = formModel[key].value;
   }
-  console.log("Merci ! Votre réservation a été reçue.");
   console.log(formBody);
 }
 
@@ -51,6 +51,7 @@ export function handleFormSubmit(event) {
 
   const isFormModelInvalid = checkFormModelInvalid();
   if (isFormModelInvalid === false) {
+    appendConfirmation();
     handleFormBody();
   }
 }

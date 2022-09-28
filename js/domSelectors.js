@@ -1,5 +1,6 @@
 class DomSelectors {
   modalbg = document.querySelector(".bground");
+  modalBody = document.querySelector(".modal-body");
   modalBtn = document.querySelectorAll(".modal-btn");
   form = document.querySelector("form[name=reserve]");
   formData = document.querySelectorAll(".formData");
