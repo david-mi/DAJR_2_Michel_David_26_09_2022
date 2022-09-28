@@ -2,15 +2,35 @@ import { emailRegex, nameRegex, birthDateRegex, tournamentCountRegex } from "./r
 import { formModel } from "../formModel.js";
 import { hydrateFormModel } from "../formActions.js";
 
+/**
+ *  Add error & errorVisible dataset properties to the input
+ * 
+ * @param {HTMLInputElement} inputNodeContainer - Selected input
+ * @param {string} errorMessage - Error message to display
+ */
+
 function displayError(inputNodeContainer, errorMessage) {
   inputNodeContainer.dataset.error = errorMessage;
   inputNodeContainer.dataset.errorVisible = true;
 }
 
-function displayValid(inputNodeContainer) {
+/**
+ * Remove error & errorVisible dataset properties from the input
+ * 
+ * @param {HTMLInputElement} inputNodeContainer - Selected input
+ */
+
+export function displayValid(inputNodeContainer) {
   inputNodeContainer.removeAttribute("data-error");
   inputNodeContainer.removeAttribute("data-error-visible");
 }
+
+/**
+ * Calls displayValid or displayError function based on isValid value
+ * 
+ * @param {HTMLInputElement} inputNode 
+ * @param {boolean} isValid 
+ */
 
 function handleDisplayValidity(inputNode, isValid) {
   const inputNodeContainer = inputNode.closest(".formData");
@@ -23,6 +43,13 @@ function handleDisplayValidity(inputNode, isValid) {
   }
 }
 
+/**
+ * Handle firstName input
+ * Verify input with a regex
+ * 
+ * @param {HTMLInputElement} inputNode
+ */
+
 export function firstName({ target: inputNode }) {
   const regexTestValid = nameRegex.test(inputNode.value);
   const firstName = regexTestValid ? inputNode.value : null;
@@ -30,6 +57,13 @@ export function firstName({ target: inputNode }) {
   handleDisplayValidity(inputNode, regexTestValid);
   hydrateFormModel("firstName", firstName, regexTestValid);
 }
+
+/**
+ * Handle lastname input
+ * Verify input with a regex
+ * 
+ * @param {HTMLInputElement} inputNode
+ */
 
 export function lastName({ target: inputNode }) {
   const regexTestValid = nameRegex.test(inputNode.value);
@@ -39,6 +73,13 @@ export function lastName({ target: inputNode }) {
   hydrateFormModel("lastName", lastName, regexTestValid);
 }
 
+/**
+ * Handle email input
+ * Verify input with a regex
+ * 
+ * @param {HTMLInputElement} inputNode
+ */
+
 export function email({ target: inputNode }) {
   const regexTestValid = emailRegex.test(inputNode.value);
   const email = regexTestValid ? inputNode.value : null;
@@ -46,6 +87,13 @@ export function email({ target: inputNode }) {
   handleDisplayValidity(inputNode, regexTestValid);
   hydrateFormModel("email", email, regexTestValid);
 }
+
+/**
+ * Handle birthDate input
+ * Verify input with a regex
+ * 
+ * @param {HTMLInputElement} inputNode
+ */
 
 export function birthDate({ target: inputNode }) {
   const regexTestValid = birthDateRegex.test(inputNode.value);
