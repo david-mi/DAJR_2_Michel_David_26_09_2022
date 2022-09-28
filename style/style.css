@@ -197,6 +197,7 @@ main {
 }
 
 .modal-body {
+  position: relative;
   padding: 15px 8%;
   margin: 15px auto;
 }
@@ -326,6 +327,7 @@ input[data-error]::after {
 
 .close {
   position: absolute;
+  z-index: 10;
   right: 15px;
   top: 15px;
   width: 32px;
@@ -583,4 +585,36 @@ footer {
   to {
     opacity: 1;
   }
+}
+
+.confirmation {
+  position: absolute;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "."
+    "text"
+    "btn";
+  align-items: center;
+  justify-items: center;
+  inset: 0;
+  z-index: 1;
+  padding: 15px 8%;
+  margin: 15px auto;
+  height: 745px;
+  background-color: #232323;
+}
+
+.confirmation p {
+  text-align: center;
+  align-self: flex-start;
+  grid-area: text;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.confirmation button {
+  grid-area: btn;
+  padding: 0.7rem 4rem;
+  border: none;
 }
