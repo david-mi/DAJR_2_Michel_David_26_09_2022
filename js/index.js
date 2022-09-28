@@ -3,14 +3,10 @@ import { resetForm, handleFormSubmit } from "./form/formActions.js";
 // instanciated of DomSelectors class
 import dom from "./domSelectors.js";
 
-/** Handle topNav style */
+/** Toggle responsive className on click to navToogleButton */
 function handleTopNavStyle() {
-  const topNav = dom.getOne("myTopnav");
-  if (topNav.className === "topnav") {
-    topNav.className += " responsive";
-  } else {
-    topNav.className = "topnav";
-  }
+  const topNav = dom.getOne("#myTopnav");
+  topNav.classList.toggle("responsive");
 }
 
 dom.navToggleButton.addEventListener("click", handleTopNavStyle);
