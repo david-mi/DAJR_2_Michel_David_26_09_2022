@@ -6,7 +6,7 @@ import dom from "./domSelectors.js";
 
 /** Toggle responsive className on click to navToogleButton */
 function handleTopNavStyle() {
-  const topNav = dom.getOne("#myTopnav");
+  const topNav = dom.getNode("#myTopnav");
   topNav.classList.toggle("responsive");
 }
 

@@ -8,11 +8,11 @@ class DomSelectors {
   navToggleButton = document.querySelector(".icon");
   closeModalButton = document.querySelector(".close");
 
-  getOne(selector) {
+  getNode(selector) {
     return document.querySelector(selector);
   }
 
-  getAll(selector) {
+  getNodelist(selector) {
     return document.querySelectorAll(selector);
   }
 }
