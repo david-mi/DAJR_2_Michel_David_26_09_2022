@@ -2,6 +2,7 @@
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
   --font-slab: var(--font-default);
   --modal-duration: 0.8s;
+  --clr-error: #e54858
 }
 
 * {
@@ -228,7 +229,7 @@ input {
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
-  color: #e54858;
+  color: var(--clr-error);
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
@@ -243,7 +244,7 @@ input {
 }
 
 .formData[data-error-visible="true"] .text-control {
-  border: 2px solid #e54858;
+  border: 2px solid var(--clr-error);
 }
 
 
@@ -617,4 +618,45 @@ footer {
   grid-area: btn;
   padding: 0.7rem 4rem;
   border: none;
+}
+
+.invalid {
+  background-color: var(--clr-error);
+}
+
+.formData .checkbox-label .checkbox-icon.invalid,
+.formData .checkbox2-label .checkbox-icon.invalid {
+  background-color: var(--clr-error);
+}
+
+.formData .checkbox-icon.invalid {
+  border-color: var(--clr-error);
+}
+
+/* Override autofill default colors */
+
+input.invalid:-webkit-autofill,
+input.invalid:-webkit-autofill:hover,
+input.invalid:-webkit-autofill:focus,
+input.invalid:-webkit-autofill:active,
+input.invalid:-internal-autofill-selected,
+input.invalid:-internal-autofill-previewed {
+  box-shadow: 0 0 0 30px var(--clr-error) inset;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-internal-autofill-selected,
+input:-internal-autofill-previewed {
+  box-shadow: 0 0 0 30px white inset;
+}
+
+.formData::after {
+  height: 3px;
+}
+
+.text-control {
+  border: solid 2px transparent;
 }
