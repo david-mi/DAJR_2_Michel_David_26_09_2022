@@ -1,6 +1,6 @@
-import { resetForm } from "./formActions.js";
+import { resetForm } from "./actions.js";
 import dom from "../domSelectors.js";
-import { formModel } from "./formModel.js";
+import { formModel } from "./model.js";
 
 /** Displays form modal on click */
 export function showForm() {

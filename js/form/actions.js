@@ -1,7 +1,7 @@
 import dom from "../domSelectors.js";
-import { formModel, defaultFormModel } from "./formModel.js";
+import { formModel, defaultFormModel } from "./model.js";
 import { appendConfirmation } from "../confirmation.js";
-import { displayValid, handleErrorClasslists } from "./formDisplay.js";
+import { displayValid, handleErrorClasslists } from "./attributesHandler.js";
 
 /** Trigger input type Event to all form input nodes, except submit */
 

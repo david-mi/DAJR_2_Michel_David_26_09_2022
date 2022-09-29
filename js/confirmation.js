@@ -1,5 +1,5 @@
 import dom from "./domSelectors.js";
-import { closeForm } from "./form/formDisplay.js";
+import { closeForm } from "./form/attributesHandler.js";
 
 const confirmationElement = createConfirmationNodes();
 

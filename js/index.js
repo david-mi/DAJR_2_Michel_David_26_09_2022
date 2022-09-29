@@ -1,6 +1,6 @@
 import * as validate from "./form/validators/validator.js";
-import { handleFormSubmit } from "./form/formActions.js";
-import { showForm, closeForm } from "./form/formDisplay.js";
+import { handleFormSubmit } from "./form/actions.js";
+import { showForm, closeForm } from "./form/attributesHandler.js";
 // instanciated of DomSelectors class
 import dom from "./domSelectors.js";
 
