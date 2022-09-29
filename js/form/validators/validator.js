@@ -103,6 +103,13 @@ export function birthDate({ target: inputNode }) {
   hydrateFormModel("birthDate", birthDate, regexTestValid);
 }
 
+/**
+ * Handle tournamentsCount input
+ * Verify input with a regex
+ * 
+ * @param {HTMLInputElement} inputNode
+ */
+
 export function tournamentsCount({ target: inputNode }) {
   const regexTestValid = tournamentCountRegex.test(inputNode.value);
   const tournamentsCount = regexTestValid ? Number(inputNode.value) : null;
@@ -110,6 +117,13 @@ export function tournamentsCount({ target: inputNode }) {
   handleDisplayValidity(inputNode, regexTestValid);
   hydrateFormModel("tournamentsCount", tournamentsCount, regexTestValid);
 }
+
+/**
+ * Handle acceptCgu input
+ * Verify checkbox value
+ * 
+ * @param {HTMLInputElement} inputNode
+ */
 
 export function acceptCgu({ target: inputNode }) {
   const acceptCgu = inputNode.checked;
@@ -119,9 +133,26 @@ export function acceptCgu({ target: inputNode }) {
   hydrateFormModel("acceptCgu", acceptCgu, isCguValid);
 }
 
+/**
+ * Handle acceptNewsletter input
+ * Verify checkbox value
+ * 
+ * @param {HTMLInputElement} inputNode
+ */
+
 export function acceptNewsletter({ target: inputNode }) {
   hydrateFormModel("acceptNewsletter", inputNode.checked, true);
 }
+
+/**
+ * Handle location input
+ * Verify radio value
+ * 
+ * If radio is not checked, check if there is any value stored in 
+ * {@link formModel} on location key
+ * 
+ * @param {HTMLInputElement} inputNode
+ */
 
 export function location({ target: inputNode }) {
   const hasChosenLocation = inputNode.checked || formModel.location.value !== null;

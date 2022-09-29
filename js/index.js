@@ -10,6 +10,8 @@ function handleTopNavStyle() {
   topNav.classList.toggle("responsive");
 }
 
+/** Adding every needed event listeners on initialization */
+
 dom.navToggleButton.addEventListener("click", handleTopNavStyle);
 dom.modalBtn.forEach((btn) => btn.addEventListener("click", showForm));
 dom.closeModalButton.addEventListener("click", closeForm);

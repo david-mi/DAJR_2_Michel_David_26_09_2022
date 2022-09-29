@@ -1,3 +1,9 @@
+/**
+ * contains all needed ElementNodes
+ * @property {method} getNode returns the lastest
+ * value of target ElementNode
+ */
+
 class DomSelectors {
   modalbg = document.querySelector(".bground");
   modalBody = document.querySelector(".modal-body");
@@ -8,9 +14,24 @@ class DomSelectors {
   navToggleButton = document.querySelector(".icon");
   closeModalButton = document.querySelector(".close");
 
+
+  /**
+   * returns the lastest version of targeted ElementNode
+   * 
+   * @param {string} selector any CSS selector
+   * @returns {HTMLElement}
+   */
+
   getNode(selector) {
     return document.querySelector(selector);
   }
+
+  /**
+   * returns the lastest version of targeted NodeList
+   * 
+   * @param {string} selector any CSS selector
+   * @returns {NodeList}
+   */
 
   getNodelist(selector) {
     return document.querySelectorAll(selector);

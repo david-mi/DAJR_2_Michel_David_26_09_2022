@@ -3,6 +3,13 @@ import { closeForm } from "./form/formDisplay.js";
 
 const confirmationElement = createConfirmationNodes();
 
+/**
+ * Construct confirmation Element with 
+ * all child nodes
+ * 
+ * @returns {HTMLDivElement}
+ */
+
 function createConfirmationNodes() {
   const confirmationContainerNode = document.createElement("div");
   confirmationContainerNode.classList.add("confirmation");
@@ -19,6 +26,11 @@ function createConfirmationNodes() {
 
   return confirmationContainerNode;
 }
+
+/**
+ * Add {@link confirmationElement} to 
+ * {@link dom.modalBody}
+ */
 
 export function appendConfirmation() {
   dom.modalBody.append(confirmationElement);
