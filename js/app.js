@@ -1,14 +1,8 @@
 import * as validate from "./form/validators/validator.js";
 import { handleFormSubmit } from "./form/actions.js";
-import { showForm, closeForm } from "./form/attributesHandler.js";
-// instanciated of DomSelectors class
+import { showForm, closeForm } from "./form/formAttributesHandler.js";
+import { handleTopNavStyle } from "./attributesHandler.js";
 import dom from "./domSelectors.js";
-
-/** Toggle responsive className on click to navToogleButton */
-function handleTopNavStyle() {
-  const topNav = dom.getNode("#myTopnav");
-  topNav.classList.toggle("responsive");
-}
 
 /** Adding every needed event listeners on initialization */
 

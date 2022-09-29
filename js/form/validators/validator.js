@@ -1,7 +1,7 @@
 import { emailRegex, nameRegex, birthDateRegex, tournamentCountRegex } from "./regex.js";
 import { formModel } from "../model.js";
 import { hydrateFormModel } from "../actions.js";
-import { handleDisplayValidity } from "../attributesHandler.js";
+import { handleDisplayValidity } from "../formAttributesHandler.js";
 
 
 /**
