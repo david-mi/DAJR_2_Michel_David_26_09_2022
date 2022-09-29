@@ -1,7 +1,7 @@
 import dom from "../domSelectors.js";
 import { formModel, defaultFormModel } from "./formModel.js";
 import { appendConfirmation } from "../confirmation.js";
-import { displayValid } from "./validators/validator.js";
+import { displayValid, handleErrorClasslists } from "./formDisplay.js";
 
 /** Trigger input type Event to all form input nodes, except submit */
 
@@ -70,7 +70,6 @@ export function makeFormBodyData() {
   console.log(formBody);
 }
 
-
 /**
  * - Remove displayed errors from form
  * - Reset `value` and `isValid` in {@link formModel}
@@ -80,6 +79,7 @@ export function makeFormBodyData() {
 
 export function resetForm() {
   dom.formData.forEach(displayValid);
+  dom.formInputs.forEach(inputNode => handleErrorClasslists(inputNode, true));
 
   for (const key in formModel) {
     formModel[key].value = defaultFormModel[key].value;

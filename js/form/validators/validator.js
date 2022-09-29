@@ -1,47 +1,8 @@
 import { emailRegex, nameRegex, birthDateRegex, tournamentCountRegex } from "./regex.js";
 import { formModel } from "../formModel.js";
 import { hydrateFormModel } from "../formActions.js";
+import { handleDisplayValidity } from "../formDisplay.js";
 
-/**
- *  Add error & errorVisible dataset properties to the input
- * 
- * @param {HTMLInputElement} inputNodeContainer - Selected input
- * @param {string} errorMessage - Error message to display
- */
-
-function displayError(inputNodeContainer, errorMessage) {
-  inputNodeContainer.dataset.error = errorMessage;
-  inputNodeContainer.dataset.errorVisible = true;
-}
-
-/**
- * Remove error & errorVisible dataset properties from the input
- * 
- * @param {HTMLInputElement} inputNodeContainer - Selected input
- */
-
-export function displayValid(inputNodeContainer) {
-  inputNodeContainer.removeAttribute("data-error");
-  inputNodeContainer.removeAttribute("data-error-visible");
-}
-
-/**
- * Calls displayValid or displayError function based on isValid value
- * 
- * @param {HTMLInputElement} inputNode 
- * @param {boolean} isValid 
- */
-
-function handleDisplayValidity(inputNode, isValid) {
-  const inputNodeContainer = inputNode.closest(".formData");
-
-  if (isValid) {
-    displayValid(inputNodeContainer);
-  } else {
-    const errorMessage = formModel[inputNode.name].errorMessage;
-    displayError(inputNodeContainer, errorMessage);
-  }
-}
 
 /**
  * Handle firstName input

@@ -13,6 +13,7 @@ class DomSelectors {
   formInputs = this.form.querySelectorAll("input[name]");
   navToggleButton = document.querySelector(".icon");
   closeModalButton = document.querySelector(".close");
+  checkboxIcons = document.querySelectorAll(".checkbox-icon");
 
 
   /**
