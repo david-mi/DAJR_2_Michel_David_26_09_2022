@@ -226,7 +226,7 @@ input {
   height: 48px;
 }
 
-.formData[data-error]::after {
+.formData::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: var(--clr-error);
