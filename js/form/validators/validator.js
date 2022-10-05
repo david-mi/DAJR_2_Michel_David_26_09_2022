@@ -2,6 +2,7 @@ import { emailRegex, nameRegex, birthDateRegex, tournamentCountRegex } from "./r
 import { formModel } from "../model.js";
 import { hydrateFormModel } from "../actions.js";
 import { handleDisplayValidity } from "../formAttributesHandler.js";
+import { isUserYoungerThanEighteen } from "../formHelpers.js";
 
 
 /**
@@ -57,11 +58,22 @@ export function email({ target: inputNode }) {
  */
 
 export function birthDate({ target: inputNode }) {
-  const regexTestValid = birthDateRegex.test(inputNode.value);
-  const birthDate = regexTestValid ? inputNode.value : null;
+  let isDateValid = birthDateRegex.test(inputNode.value);
+  const birthDate = isDateValid ? inputNode.value : null;
 
-  handleDisplayValidity(inputNode, regexTestValid);
-  hydrateFormModel("birthDate", birthDate, regexTestValid);
+  if (birthDate === null) {
+    formModel.birthDate.errorMessage = "Veuillez mettre une date de naissance au format jj/mm/aaaa";
+  }
+
+  if (birthDate !== null) {
+    if (isUserYoungerThanEighteen(birthDate) === true) {
+      isDateValid = false;
+      formModel.birthDate.errorMessage = "Vous devez avoir 18 ans ou plus";
+    }
+  }
+
+  handleDisplayValidity(inputNode, isDateValid);
+  hydrateFormModel("birthDate", birthDate, isDateValid);
 }
 
 /**
@@ -133,5 +145,4 @@ export function location({ target: inputNode }) {
 
   handleDisplayValidity(inputNode, hasChosenLocation);
   hydrateFormModel("location", location, isLocationValid);
-
 }

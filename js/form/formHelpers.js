@@ -14,5 +14,5 @@ export function isUserYoungerThanEighteen(birthDate) {
 
   const nowMinusEighteenYears = currentDate.setFullYear(currentYear - 18);
 
-  return userBirthDate < nowMinusEighteenYears;
+  return userBirthDate > nowMinusEighteenYears;
 }
