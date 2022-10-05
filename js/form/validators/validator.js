@@ -67,6 +67,7 @@ export function birthDate({ target: inputNode }) {
 /**
  * Handle tournamentsCount input
  * Verify input with a regex
+ * Prevent filling input if input value is not validated by regex
  * 
  * @param {HTMLInputElement} inputNode
  */
@@ -74,6 +75,9 @@ export function birthDate({ target: inputNode }) {
 export function tournamentsCount({ target: inputNode }) {
   const regexTestValid = tournamentCountRegex.test(inputNode.value);
   const tournamentsCount = regexTestValid ? Number(inputNode.value) : null;
+  if (tournamentsCount === null) {
+    inputNode.value = "";
+  }
 
   handleDisplayValidity(inputNode, regexTestValid);
   hydrateFormModel("tournamentsCount", tournamentsCount, regexTestValid);
