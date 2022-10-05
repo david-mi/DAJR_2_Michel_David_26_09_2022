@@ -2,7 +2,7 @@ import * as validate from "./form/validators/validator.js";
 import { handleFormSubmit } from "./form/actions.js";
 import { showForm, closeForm } from "./form/formAttributesHandler.js";
 import { handleTopNavStyle } from "./attributesHandler.js";
-import dom from "./domSelectors.js";
+import * as dom from "./domSelectors.js";
 
 /** Adding every needed event listeners on initialization */
 

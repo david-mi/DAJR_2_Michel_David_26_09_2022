@@ -1,42 +1,11 @@
-/**
- * contains all needed ElementNodes
- * @property {method} getNode returns the lastest
- * value of target ElementNode
- */
 
-class DomSelectors {
-  modalbg = document.querySelector(".bground");
-  modalBody = document.querySelector(".modal-body");
-  modalBtn = document.querySelectorAll(".modal-btn");
-  form = document.querySelector("form[name=reserve]");
-  formData = document.querySelectorAll(".formData");
-  formInputs = this.form.querySelectorAll("input[name]");
-  navToggleButton = document.querySelector(".icon");
-  closeModalButton = document.querySelector(".close");
-  checkboxIcons = document.querySelectorAll(".checkbox-icon");
+export const modalbg = document.querySelector(".bground");
+export const modalBody = document.querySelector(".modal-body");
+export const modalBtn = document.querySelectorAll(".modal-btn");
+export const form = document.querySelector("form[name=reserve]");
+export const formData = document.querySelectorAll(".formData");
+export const formInputs = document.querySelectorAll("form[name=reserve] input[name]");
+export const navToggleButton = document.querySelector(".icon");
+export const closeModalButton = document.querySelector(".close");
+export const checkboxIcons = document.querySelectorAll(".checkbox-icon")
 
-
-  /**
-   * returns the lastest version of targeted ElementNode
-   * 
-   * @param {string} selector any CSS selector
-   * @returns {HTMLElement}
-   */
-
-  getNode(selector) {
-    return document.querySelector(selector);
-  }
-
-  /**
-   * returns the lastest version of targeted NodeList
-   * 
-   * @param {string} selector any CSS selector
-   * @returns {NodeList}
-   */
-
-  getNodelist(selector) {
-    return document.querySelectorAll(selector);
-  }
-}
-
-export default new DomSelectors();

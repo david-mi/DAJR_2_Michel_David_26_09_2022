@@ -1,5 +1,5 @@
 import { resetForm } from "./actions.js";
-import dom from "../domSelectors.js";
+import * as dom from "../domSelectors.js";
 import { formModel } from "./model.js";
 
 /** Displays form modal on click */
@@ -10,7 +10,7 @@ export function showForm() {
 /** hide form modal on click */
 export function closeForm() {
   dom.modalbg.classList.add("select-hide");
-  const confirmationDiv = dom.getNode(".confirmation");
+  const confirmationDiv = document.querySelector(".confirmation");
   if (confirmationDiv) {
     confirmationDiv.remove();
   }
