@@ -246,7 +246,7 @@ input {
   height: 48px;
 }
 
-.formData::after {
+.form-data::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: var(--clr-error);
@@ -259,11 +259,11 @@ input {
   transition: 0.3s;
 }
 
-.formData[data-error-visible="true"]::after {
+.form-data[data-error-visible="true"]::after {
   opacity: 1;
 }
 
-.formData[data-error-visible="true"] .text-control {
+.form-data[data-error-visible="true"] .text-control {
   border: 2px solid var(--clr-error);
 }
 
@@ -654,12 +654,12 @@ footer {
   background-color: var(--clr-error);
 }
 
-.formData .checkbox-label .checkbox-icon.invalid,
-.formData .checkbox2-label .checkbox-icon.invalid {
+.form-data .checkbox-label .checkbox-icon.invalid,
+.form-data .checkbox2-label .checkbox-icon.invalid {
   background-color: var(--clr-error);
 }
 
-.formData .checkbox-icon.invalid {
+.form-data .checkbox-icon.invalid {
   border-color: var(--clr-error);
 }
 
@@ -683,7 +683,7 @@ input:-internal-autofill-previewed {
   box-shadow: 0 0 0 30px white inset;
 }
 
-.formData::after {
+.form-data::after {
   height: 0.5px;
 }
 

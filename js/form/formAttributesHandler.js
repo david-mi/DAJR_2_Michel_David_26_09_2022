@@ -76,7 +76,7 @@ export function displayValid(inputNodeContainer) {
  */
 
 export function handleDisplayValidity(inputNode, isValid) {
-  const inputNodeContainer = inputNode.closest(".formData");
+  const inputNodeContainer = inputNode.closest(".form-data");
 
   if (isValid) {
     displayValid(inputNodeContainer, inputNode);
