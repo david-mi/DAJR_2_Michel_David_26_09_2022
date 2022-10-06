@@ -586,6 +586,12 @@ input:-internal-autofill-previewed {
 
 @media screen and (max-width: 800px) {
 
+  main .btn-submit,
+  main .btn-signup {
+    padding: 8px 25px;
+    font-size: 14px;
+  }
+
   .content {
     top: 100px;
     bottom: 0px;
@@ -631,7 +637,6 @@ input:-internal-autofill-previewed {
   .hero-section > .btn-signup {
     display: block;
     margin: 32px auto 10px;
-    padding: 12px 35px;
   }
 
   .copyrights {
