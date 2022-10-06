@@ -2,9 +2,13 @@ import { resetForm } from "./actions.js";
 import * as dom from "../domSelectors.js";
 import { formModel } from "./model.js";
 
-/** Displays form modal on click */
+/** 
+ * Displays form modal on click
+ * Hide topNav responsive menu if present
+ */
 export function showForm() {
   dom.modalbg.classList.remove("select-hide");
+  dom.topNav.classList.remove("responsive");
 }
 
 /** hide form modal on click */

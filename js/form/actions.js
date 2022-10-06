@@ -91,6 +91,7 @@ export function resetForm() {
 
 /** 
  * - Triggers input type event on all inputs field except submit
+ * - Hiding topNav responsive menu if present
  * - Checks if {@link formModel} has every of his isValid keys set to `true` 
  * - if `isFormModelInvalid` is true, show confirmation node and construct 
  * {@link formBodyType}
@@ -99,6 +100,8 @@ export function resetForm() {
 export function handleFormSubmit(event) {
   event.preventDefault();
   triggerInputEvents();
+
+  dom.topNav.classList.remove("responsive");
 
   const isFormModelInvalid = checkFormModelInvalid();
   if (isFormModelInvalid === false) {
