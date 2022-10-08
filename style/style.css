@@ -34,7 +34,8 @@ img {
 
 .topnav {
   overflow: hidden;
-  margin: 3.5%;
+  padding: 3.5%;
+  background-color: white;
 }
 
 .header-logo {
@@ -153,7 +154,7 @@ main {
   animation-duration: var(--modal-duration);
   background: #232323;
   border-radius: 10px;
-  /* overflow: hidden; */
+  overflow: hidden;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -165,7 +166,7 @@ main {
 .modal-body {
   position: relative;
   padding: 15px 8%;
-  margin: 15px auto;
+  /* margin: 15px auto; */
   background-color: #232323;
 }
 
@@ -525,7 +526,6 @@ footer {
   z-index: 1;
   padding: 15px 8%;
   margin: 15px auto;
-  height: 100%;
   background-color: #232323;
 }
 
@@ -592,22 +592,32 @@ input:-internal-autofill-previewed {
     font-size: 14px;
   }
 
-  .content {
-    top: 100px;
-    bottom: 0px;
-    transform: translate(-50%, 0);
-  }
-
   .hero-section {
     display: block;
     box-shadow: unset;
     max-height: unset;
   }
 
+
+
   .hero-content {
     background: #fff;
     color: #000;
     padding: 0px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .modal-body {
+    height: 100%;
+  }
+
+  .btn-submit {
+    margin: auto;
   }
 
   .hero-content::after {
@@ -654,7 +664,9 @@ input:-internal-autofill-previewed {
 
   .topnav a.icon {
     float: right;
-    display: block;
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
   }
 
   .topnav {
@@ -688,25 +700,17 @@ input:-internal-autofill-previewed {
 
 
 @media screen and (max-width: 540px) {
-
-  body:has(.bground:not(.select-hide)) .topnav {
-    position: fixed;
-    background-color: white;
-    width: 100%;
-    margin: 0;
-    padding: 3.5%;
-  }
-
-  body:has(.bground:not(.select-hide)) footer {
-    display: none;
-  }
-
-  body:has(.bground:not(.select-hide)) .hero-section {
-    display: none;
-  }
-
   .topnav {
     z-index: 10;
+    padding: 0 3.5%;
+  }
+
+  .header-logo {
+    padding: 20px;
+  }
+
+  .header-logo img {
+    height: 25px;
   }
 
   .topnav a {
@@ -720,10 +724,23 @@ input:-internal-autofill-previewed {
 
   .content {
     border-radius: 10px 10px 0 0;
+    max-width: 100%;
+    overflow: auto;
   }
 
   .bground {
     z-index: 1;
     background-color: transparent;
+  }
+
+  .content {
+    top: 70px;
+    bottom: 0px;
+    transform: translate(-50%, 0);
+  }
+
+  .hero-section.hide,
+  footer.hide {
+    display: none;
   }
 }
