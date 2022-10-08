@@ -1,6 +1,16 @@
 import { resetForm } from "./actions.js";
 import * as dom from "../domSelectors.js";
 import { formModel } from "./model.js";
+import { handleTopNavStyle } from "../attributesHandler.js";
+
+/**
+ * If topNav responsive menu is open, close it when clicking anywhere on form modal
+ */
+dom.modalBody.addEventListener("click", () => {
+  if (dom.topNav.classList.contains("responsive")) {
+    handleTopNavStyle();
+  }
+});
 
 /** 
  * Displays form modal on click
@@ -9,11 +19,15 @@ import { formModel } from "./model.js";
 export function showForm() {
   dom.modalbg.classList.remove("select-hide");
   dom.topNav.classList.remove("responsive");
+  dom.heroSection.classList.add("hide");
+  dom.footer.classList.add("hide");
 }
 
 /** hide form modal on click */
 export function closeForm() {
   dom.modalbg.classList.add("select-hide");
+  dom.heroSection.classList.remove("hide");
+  dom.footer.classList.add("hide");
   const confirmationDiv = document.querySelector(".confirmation");
   if (confirmationDiv) {
     confirmationDiv.remove();
