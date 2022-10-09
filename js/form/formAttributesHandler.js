@@ -27,7 +27,7 @@ export function showForm() {
 export function closeForm() {
   dom.modalbg.classList.add("select-hide");
   dom.heroSection.classList.remove("hide");
-  dom.footer.classList.add("hide");
+  dom.footer.classList.remove("hide");
   const confirmationDiv = document.querySelector(".confirmation");
   if (confirmationDiv) {
     confirmationDiv.remove();
