@@ -1,5 +1,5 @@
 import { resetForm } from "./actions.js";
-import * as dom from "../domSelectors.js";
+import * as dom from "../constants.js";
 import { formModel } from "./model.js";
 import { handleTopNavStyle } from "../attributesHandler.js";
 

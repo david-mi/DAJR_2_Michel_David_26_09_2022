@@ -1,4 +1,4 @@
-import * as dom from "../domSelectors.js";
+import * as dom from "../constants.js";
 import { formModel, defaultFormModel } from "./model.js";
 import { appendConfirmation } from "../confirmation/confirmation.js";
 import { displayValid, handleErrorClasslists } from "./formAttributesHandler.js";
