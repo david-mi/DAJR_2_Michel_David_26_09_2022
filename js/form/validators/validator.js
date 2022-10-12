@@ -1,8 +1,12 @@
-import { emailRegex, nameRegex, birthDateRegex, tournamentCountRegex } from "./regex.js";
 import { formModel } from "../model.js";
 import { hydrateFormModel } from "../actions.js";
 import { handleDisplayValidity } from "../formAttributesHandler.js";
 import { isUserYoungerThanEighteen } from "../formHelpers.js";
+
+const nameRegex = /^[a-z-À-ö\s]{2,}$/i;
+const emailRegex = /^[a-zA-Z]+[a-z-A-Z.-_\d]+?@[a-zA-Z]+\.[a-z]{2,4}$/;
+const birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
+const tournamentCountRegex = /^\b([0-9]|[1-9][0-9])\b$/;
 
 
 /**
