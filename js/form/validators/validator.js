@@ -90,9 +90,9 @@ export function birthDate({ target: inputNode }) {
 
 export function tournamentsCount({ target: inputNode }) {
   const regexTestValid = tournamentCountRegex.test(inputNode.value);
-  const tournamentsCount = regexTestValid ? Number(inputNode.value) : null;
-  if (tournamentsCount === null) {
-    inputNode.value = "";
+  const tournamentsCount = regexTestValid ? Number(inputNode.value) : formModel.tournamentsCount.value;
+  if (regexTestValid === false) {
+    inputNode.value = formModel.tournamentsCount.value;
   }
 
   handleDisplayValidity(inputNode, regexTestValid);
