@@ -1,7 +1,7 @@
 import { formModel } from "../model.js";
 import { hydrateFormModel } from "../actions.js";
 import { handleDisplayValidity } from "../formAttributesHandler.js";
-import { isUserYoungerThanEighteen } from "../formHelpers.js";
+import { isUserTooYoungOrTooOld } from "../formHelpers.js";
 
 const nameRegex = /^[a-z-À-ö\s]{2,}$/i;
 const emailRegex = /^[a-zA-Z]+[a-z-A-Z.-_\d]+?@[a-zA-Z]+\.[a-z]{2,4}$/;
@@ -70,9 +70,9 @@ export function birthDate({ target: inputNode }) {
   }
 
   if (birthDate !== null) {
-    if (isUserYoungerThanEighteen(birthDate) === true) {
+    if (isUserTooYoungOrTooOld(birthDate) === true) {
       isDateValid = false;
-      formModel.birthDate.errorMessage = "Vous devez avoir 18 ans ou plus";
+      formModel.birthDate.errorMessage = "Vous devez avoir entre 18 et 122 ans";
     }
   }
 
