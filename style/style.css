@@ -685,10 +685,11 @@ input:-internal-autofill-previewed {
 
   }
 
-  .topnav.responsive .icon {
+  .topnav .icon {
     position: absolute;
     right: 0;
-    top: -5px;
+    top: 5px;
+    right: 10px;
   }
 
   .topnav.responsive a {
