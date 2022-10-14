@@ -3,7 +3,7 @@ import { hydrateFormModel } from "../actions.js";
 import { handleDisplayValidity } from "../formAttributesHandler.js";
 import { isUserTooYoungOrTooOld } from "../formHelpers.js";
 
-const nameRegex = /^[a-z-À-ö\s]{2,}$/i;
+const nameRegex = /^[a-zÀ-ö]{2,}[a-z-À-ö\s]*$/i;
 const emailRegex = /^[a-zA-Z]+[a-z-A-Z.-_\d]+?@[a-zA-Z]+\.[a-z]{2,4}$/;
 const birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
 const tournamentCountRegex = /^\b([0-9]|[1-9][0-9])\b$/;
