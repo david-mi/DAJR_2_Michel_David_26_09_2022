@@ -688,7 +688,7 @@ input:-internal-autofill-previewed {
   .topnav .icon {
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 20px;
     right: 10px;
   }
 
@@ -722,6 +722,7 @@ input:-internal-autofill-previewed {
   .topnav a.icon {
     float: right;
     display: block;
+    top: 5px;
   }
 
   .content {
