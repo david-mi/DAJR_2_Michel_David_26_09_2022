@@ -109,3 +109,18 @@ export function handleFormSubmit(event) {
     makeFormBodyData();
   }
 }
+
+/**
+ * prevent writing anything other than numbers in the concerned input
+ * Backspace, ArrowLeft & ArrowRight are still accepted
+ * 
+ * @param {KeyboardEvent} event
+ */
+
+export function pressOnlyNumbers(event) {
+  const nonPrintableKeys = ["Backspace", "ArrowLeft", "ArrowRight"];
+
+  if (isNaN(event.key) && nonPrintableKeys.includes(event.key) === false) {
+    event.preventDefault();
+  }
+}

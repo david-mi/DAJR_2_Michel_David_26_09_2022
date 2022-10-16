@@ -5,6 +5,7 @@ export const modalBtn = document.querySelectorAll(".modal-btn");
 export const form = document.querySelector("form[name=reserve]");
 export const formData = document.querySelectorAll(".form-data");
 export const formInputs = document.querySelectorAll("form[name=reserve] input[name]");
+export const formTournamentCountsInput = document.querySelector("form input[type=number]");
 export const navToggleButton = document.querySelector(".icon");
 export const closeModalButton = document.querySelector(".close");
 export const checkboxIcons = document.querySelectorAll(".checkbox-icon");

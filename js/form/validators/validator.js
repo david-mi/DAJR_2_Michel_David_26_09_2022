@@ -88,10 +88,12 @@ export function birthDate({ target: inputNode }) {
  * @param {HTMLInputElement} inputNode
  */
 
-export function tournamentsCount({ target: inputNode }) {
+export function tournamentsCount(event) {
+  const inputNode = event.target;
   const regexTestValid = tournamentCountRegex.test(inputNode.value);
-  const tournamentsCount = regexTestValid ? Number(inputNode.value) : formModel.tournamentsCount.value;
-  if (regexTestValid === false) {
+  let tournamentsCount = regexTestValid ? Number(inputNode.value) : formModel.tournamentsCount.value;
+
+  if (regexTestValid === false && event.data !== null) {
     inputNode.value = formModel.tournamentsCount.value;
   }
 
