@@ -46,7 +46,7 @@ export function lastName({ target: inputNode }) {
 
 export function email({ target: inputNode }) {
   const regexTestValid = emailRegex.test(inputNode.value);
-  const email = regexTestValid ? inputNode.value : null;
+  const email = regexTestValid ? inputNode.value.trim() : null;
 
   handleDisplayValidity(inputNode, regexTestValid);
   hydrateFormModel("email", email, regexTestValid);
@@ -55,24 +55,17 @@ export function email({ target: inputNode }) {
 /**
  * Handle birthDate input
  * Verify input with a regex
+ * Verify is user is younger than 18 years old or older than 122 years old
  * 
  * @param {InputEvent} inputNode
  */
 
 export function birthDate({ target: inputNode }) {
-  let isDateValid = birthDateRegex.test(inputNode.value);
+  let isDateValid = (
+    birthDateRegex.test(inputNode.value) &&
+    isUserTooYoungOrTooOld(inputNode.value) === false
+  );
   const birthDate = isDateValid ? inputNode.value : null;
-
-  if (birthDate === null) {
-    formModel.birthDate.errorMessage = "Veuillez mettre une date de naissance au format jj/mm/aaaa";
-  }
-
-  if (birthDate !== null) {
-    if (isUserTooYoungOrTooOld(birthDate) === true) {
-      isDateValid = false;
-      formModel.birthDate.errorMessage = "Vous devez avoir entre 18 et 122 ans";
-    }
-  }
 
   handleDisplayValidity(inputNode, isDateValid);
   hydrateFormModel("birthDate", birthDate, isDateValid);
