@@ -166,7 +166,7 @@ main {
 .modal-body {
   position: relative;
   padding: 15px 8%;
-  /* margin: 15px auto; */
+  height: 100%;
   background-color: #232323;
 }
 
@@ -589,6 +589,7 @@ input:-internal-autofill-previewed {
   main .btn-signup {
     padding: 8px 25px;
     font-size: 14px;
+    margin: auto;
   }
 
   .hero-section {
