@@ -11,7 +11,7 @@ const birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
  * Handle firstName input
  * Verify input with a regex
  * 
- * @param {HTMLInputElement} inputNode
+ * @param {InputEvent} inputNode
  */
 
 export function firstName({ target: inputNode }) {
@@ -26,7 +26,7 @@ export function firstName({ target: inputNode }) {
  * Handle lastname input
  * Verify input with a regex
  * 
- * @param {HTMLInputElement} inputNode
+ * @param {InputEvent} inputNode
  */
 
 export function lastName({ target: inputNode }) {
@@ -41,7 +41,7 @@ export function lastName({ target: inputNode }) {
  * Handle email input
  * Verify input with a regex
  * 
- * @param {HTMLInputElement} inputNode
+ * @param {InputEvent} inputNode
  */
 
 export function email({ target: inputNode }) {
@@ -56,7 +56,7 @@ export function email({ target: inputNode }) {
  * Handle birthDate input
  * Verify input with a regex
  * 
- * @param {HTMLInputElement} inputNode
+ * @param {InputEvent} inputNode
  */
 
 export function birthDate({ target: inputNode }) {
@@ -83,7 +83,7 @@ export function birthDate({ target: inputNode }) {
  * Verify if input value is a valid number and if its >= 0 and < 100
  * Prevent filling input if input value is not validated
  * 
- * @param {HTMLInputElement} inputNode
+ * @param {InputEvent} inputNode
  */
 
 export function tournamentsCount(event) {
@@ -110,7 +110,7 @@ export function tournamentsCount(event) {
  * Handle acceptCgu input
  * Verify checkbox value
  * 
- * @param {HTMLInputElement} inputNode
+ * @param {InputEvent} inputNode
  */
 
 export function acceptCgu({ target: inputNode }) {
@@ -125,7 +125,7 @@ export function acceptCgu({ target: inputNode }) {
  * Handle acceptNewsletter input
  * Verify checkbox value
  * 
- * @param {HTMLInputElement} inputNode
+ * @param {InputEvent} inputNode
  */
 
 export function acceptNewsletter({ target: inputNode }) {
@@ -139,7 +139,7 @@ export function acceptNewsletter({ target: inputNode }) {
  * If radio is not checked, check if there is any value stored in 
  * {@link formModel} on location key
  * 
- * @param {HTMLInputElement} inputNode
+ * @param {InputEvent} inputNode
  */
 
 export function location({ target: inputNode }) {
