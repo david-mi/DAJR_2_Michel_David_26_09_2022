@@ -6,7 +6,6 @@ import { isUserTooYoungOrTooOld } from "../formHelpers.js";
 const nameRegex = /^[a-zÀ-ö]{1}[a-z-À-ö ]*[a-zÀ-ö]{1}$/i;
 const emailRegex = /^[a-zA-Z]+[a-z-A-Z.-_\d]+?@[a-zA-Z]+\.[a-z]{2,4}$/;
 const birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
-const tournamentCountRegex = /^\b([0-9]|[1-9][0-9])\b$/;
 
 /**
  * Handle firstName input
@@ -81,23 +80,30 @@ export function birthDate({ target: inputNode }) {
 
 /**
  * Handle tournamentsCount input
- * Verify input with a regex
- * Prevent filling input if input value is not validated by regex
+ * Verify if input value is a valid number and if its >= 0 and < 100
+ * Prevent filling input if input value is not validated
  * 
  * @param {HTMLInputElement} inputNode
  */
 
 export function tournamentsCount(event) {
   const inputNode = event.target;
-  const regexTestValid = tournamentCountRegex.test(inputNode.value);
-  let tournamentsCount = regexTestValid ? Number(inputNode.value) : formModel.tournamentsCount.value;
+  const inputValue = inputNode.value;
 
-  if (regexTestValid === false && event.data !== null) {
+  const isValidNumber = (
+    isNaN(inputValue) === false &&
+    Number(inputValue) >= 0 &&
+    Number(inputValue) < 100
+  );
+
+  let tournamentsCount = isValidNumber ? Number(inputValue) : formModel.tournamentsCount.value;
+
+  if (isValidNumber === false && event.data !== null) {
     inputNode.value = formModel.tournamentsCount.value;
   }
 
-  handleDisplayValidity(inputNode, regexTestValid);
-  hydrateFormModel("tournamentsCount", tournamentsCount, regexTestValid);
+  handleDisplayValidity(inputNode, isValidNumber);
+  hydrateFormModel("tournamentsCount", tournamentsCount, isValidNumber);
 }
 
 /**
