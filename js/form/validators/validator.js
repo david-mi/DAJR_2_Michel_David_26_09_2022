@@ -3,7 +3,7 @@ import { hydrateFormModel } from "../actions.js";
 import { handleDisplayValidity } from "../formAttributesHandler.js";
 import { isUserTooYoungOrTooOld } from "../formHelpers.js";
 
-const nameRegex = /^[a-zÀ-ö ]{1}[a-z-À-ö ]*[a-zÀ-ö ]{1}$/i;
+const nameRegex = /^[a-zÀ-ö]{1}[a-z-À-ö ]*[a-zÀ-ö]{1}$/i;
 const emailRegex = /^[a-zA-Z]+[a-z-A-Z.-_\d]+?@[a-zA-Z]+\.[a-z]{2,4}$/;
 const birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -15,9 +15,8 @@ const birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
  */
 
 export function firstName({ target: inputNode }) {
-  const trimValue = inputNode.value.trim();
-  const regexTestValid = nameRegex.test(trimValue);
-  const firstName = regexTestValid ? trimValue : null;
+  const regexTestValid = nameRegex.test(inputNode.value);
+  const firstName = regexTestValid ? inputNode.value : null;
 
   handleDisplayValidity(inputNode, regexTestValid);
   hydrateFormModel("firstName", firstName, regexTestValid);
@@ -31,9 +30,8 @@ export function firstName({ target: inputNode }) {
  */
 
 export function lastName({ target: inputNode }) {
-  const trimValue = inputNode.value.trim();
-  const regexTestValid = nameRegex.test(trimValue);
-  const lastName = regexTestValid ? trimValue : null;
+  const regexTestValid = nameRegex.test(inputNode.value);
+  const lastName = regexTestValid ? inputNode.value : null;
 
   handleDisplayValidity(inputNode, regexTestValid);
   hydrateFormModel("lastName", lastName, regexTestValid);
