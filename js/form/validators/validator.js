@@ -8,7 +8,6 @@ const emailRegex = /^[a-zA-Z]+[a-z-A-Z.-_\d]+?@[a-zA-Z]+\.[a-z]{2,4}$/;
 const birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
 const tournamentCountRegex = /^\b([0-9]|[1-9][0-9])\b$/;
 
-
 /**
  * Handle firstName input
  * Verify input with a regex

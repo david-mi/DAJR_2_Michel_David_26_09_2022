@@ -16,6 +16,7 @@ dom.modalBody.addEventListener("click", () => {
  * Displays form modal on click
  * Hide topNav responsive menu if present
  */
+
 export function showForm() {
   dom.modalbg.classList.remove("select-hide");
   dom.topNav.classList.remove("responsive");

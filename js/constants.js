@@ -1,4 +1,3 @@
-
 export const modalbg = document.querySelector(".bground");
 export const modalBody = document.querySelector(".modal-body");
 export const modalBtn = document.querySelectorAll(".modal-btn");
@@ -11,5 +10,4 @@ export const closeModalButton = document.querySelector(".close");
 export const checkboxIcons = document.querySelectorAll(".checkbox-icon");
 export const topNav = document.querySelector(".topnav");
 export const heroSection = document.querySelector(".hero-section");
-export const footer = document.querySelector("footer")
-
+export const footer = document.querySelector("footer");
