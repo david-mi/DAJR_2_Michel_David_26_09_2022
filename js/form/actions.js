@@ -50,7 +50,7 @@ export function checkFormModelInvalid() {
  *  tournamentsCount: number,
  *  location: string,
  *  acceptCgu: true,
- *  acceptNewsletter: true | false,
+ *  nextEventWarning: true | false,
  * }}
  */
 

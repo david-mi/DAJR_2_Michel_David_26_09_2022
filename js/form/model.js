@@ -34,7 +34,7 @@ export const defaultFormModel = {
     isValid: true,
     errorMessage: "Veuillez accepter les conditions d'utilisation"
   },
-  acceptNewsletter: {
+  nextEventWarning: {
     value: false,
     isValid: true,
   },
