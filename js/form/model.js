@@ -22,7 +22,7 @@ export const defaultFormModel = {
   tournamentsCount: {
     value: null,
     isValid: false,
-    errorMessage: "Veuillez préciser une valeur comprise entre 1 et 99"
+    errorMessage: "Veuillez préciser une valeur comprise entre 0 et 99"
   },
   location: {
     value: null,

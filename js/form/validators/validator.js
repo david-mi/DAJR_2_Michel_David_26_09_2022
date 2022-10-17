@@ -89,14 +89,13 @@ export function birthDate({ target: inputNode }) {
 export function tournamentsCount(event) {
   const inputNode = event.target;
   const inputValue = inputNode.value;
-
+  const inputValueNumber = parseInt(inputValue, 10);
   const isValidNumber = (
-    isNaN(inputValue) === false &&
-    Number(inputValue) >= 0 &&
-    Number(inputValue) < 100
+    isNaN(inputValueNumber) === false &&
+    inputValueNumber >= 0 &&
+    inputValueNumber < 100
   );
-
-  let tournamentsCount = isValidNumber ? Number(inputValue) : formModel.tournamentsCount.value;
+  let tournamentsCount = isValidNumber ? inputValueNumber : formModel.tournamentsCount.value;
 
   if (isValidNumber === false && event.data !== null) {
     inputNode.value = formModel.tournamentsCount.value;
