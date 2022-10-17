@@ -182,6 +182,12 @@ input {
   border: 0.8px solid #ccc;
 }
 
+/* always show up and down arrow for input type number on chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
 .text-control {
   margin: 0;
   padding: 8px;
