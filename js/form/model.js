@@ -2,12 +2,12 @@ export const defaultFormModel = {
   firstName: {
     value: null,
     isValid: false,
-    errorMessage: "le prénom doit contenir au minimum 2 caractères"
+    errorMessage: "2 caractères minimum sans commencer ni finir par un espace"
   },
   lastName: {
     value: null,
     isValid: false,
-    errorMessage: "le nom doit contenir au minimum 2 caractères"
+    errorMessage: "2 caractères minimum sans commencer ni finir par un espace"
   },
   email: {
     value: null,
@@ -17,17 +17,17 @@ export const defaultFormModel = {
   birthDate: {
     value: null,
     isValid: false,
-    errorMessage: "Veuillez mettre une date de naissance au format jj/mm/aaaa"
+    errorMessage: "Entre 18 et 122 ans au format jj/mm/aaaa"
   },
   tournamentsCount: {
     value: null,
     isValid: false,
-    errorMessage: "Veuillez préciser une valeur comprise entre 0 et 99"
+    errorMessage: "Valeur comprise entre 0 et 99"
   },
   location: {
     value: null,
     isValid: false,
-    errorMessage: "Veuillez mettre une localité"
+    errorMessage: "Localité manquante"
   },
   acceptCgu: {
     value: true,
