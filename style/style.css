@@ -147,7 +147,6 @@ main {
 }
 
 .content {
-  /* margin: 5% auto; */
   width: 100%;
   max-width: 500px;
   animation-name: modalopen;
@@ -176,7 +175,6 @@ label {
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
-  /* padding-block: 10px; */
 }
 
 input {
@@ -192,8 +190,6 @@ input {
   font-size: 20px;
   height: 48px;
 }
-
-
 
 .form-data[data-error-visible="true"]::after {
   content: attr(data-error);
@@ -413,7 +409,6 @@ input[data-error]::after {
 }
 
 .hero-section {
-  /* min-height: 93vh; */
   max-height: 657px;
   border-radius: 10px;
   display: grid;
@@ -598,8 +593,6 @@ input:-internal-autofill-previewed {
     max-height: unset;
   }
 
-
-
   .hero-content {
     background: #fff;
     color: #000;
@@ -612,10 +605,6 @@ input:-internal-autofill-previewed {
     flex-direction: column;
     height: 100%;
   }
-
-  /* .modal-body {
-    height: 100%;
-  } */
 
   .btn-submit {
     margin: auto;
@@ -657,7 +646,6 @@ input:-internal-autofill-previewed {
   }
 }
 
-
 @media screen and (max-width: 768px) {
 
   .topnav a {
@@ -683,7 +671,6 @@ input:-internal-autofill-previewed {
   .topnav.responsive {
     position: relative;
     flex-direction: column;
-
   }
 
   .topnav .icon {
@@ -699,8 +686,6 @@ input:-internal-autofill-previewed {
     text-align: center;
   }
 }
-
-
 
 @media screen and (max-width: 540px) {
   .topnav {
