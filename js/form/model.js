@@ -2,12 +2,12 @@ export const defaultFormModel = {
   firstName: {
     value: null,
     isValid: false,
-    errorMessage: "2 caractères minimum sans commencer ni finir par un espace"
+    errorMessage: "2 caractères minimum en commençant et finissant par une lettre"
   },
   lastName: {
     value: null,
     isValid: false,
-    errorMessage: "2 caractères minimum sans commencer ni finir par un espace"
+    errorMessage: "2 caractères minimum en commençant et finissant par une lettre"
   },
   email: {
     value: null,
