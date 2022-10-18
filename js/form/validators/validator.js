@@ -16,10 +16,10 @@ const birthDateRegex = /^\d{4}-\d{2}-\d{2}$/;
 
 export function firstName({ target: inputNode }) {
   const regexTestValid = nameRegex.test(inputNode.value);
-  const firstName = regexTestValid ? inputNode.value : null;
+  const firstNameValue = regexTestValid ? inputNode.value : null;
 
   handleDisplayValidity(inputNode, regexTestValid);
-  hydrateFormModel("firstName", firstName, regexTestValid);
+  hydrateFormModel("firstName", firstNameValue, regexTestValid);
 }
 
 /**
@@ -31,10 +31,10 @@ export function firstName({ target: inputNode }) {
 
 export function lastName({ target: inputNode }) {
   const regexTestValid = nameRegex.test(inputNode.value);
-  const lastName = regexTestValid ? inputNode.value : null;
+  const lastNameValue = regexTestValid ? inputNode.value : null;
 
   handleDisplayValidity(inputNode, regexTestValid);
-  hydrateFormModel("lastName", lastName, regexTestValid);
+  hydrateFormModel("lastName", lastNameValue, regexTestValid);
 }
 
 /**
@@ -46,10 +46,10 @@ export function lastName({ target: inputNode }) {
 
 export function email({ target: inputNode }) {
   const regexTestValid = emailRegex.test(inputNode.value);
-  const email = regexTestValid ? inputNode.value.trim() : null;
+  const emailValue = regexTestValid ? inputNode.value.trim() : null;
 
   handleDisplayValidity(inputNode, regexTestValid);
-  hydrateFormModel("email", email, regexTestValid);
+  hydrateFormModel("email", emailValue, regexTestValid);
 }
 
 /**
@@ -65,10 +65,10 @@ export function birthDate({ target: inputNode }) {
     birthDateRegex.test(inputNode.value) &&
     isUserTooYoungOrTooOld(inputNode.value) === false
   );
-  const birthDate = isDateValid ? inputNode.value : null;
+  const birthDateValue = isDateValid ? inputNode.value : null;
 
   handleDisplayValidity(inputNode, isDateValid);
-  hydrateFormModel("birthDate", birthDate, isDateValid);
+  hydrateFormModel("birthDate", birthDateValue, isDateValid);
 }
 
 /**
@@ -88,10 +88,10 @@ export function tournamentsCount(event) {
     inputValueNumber >= 0 &&
     inputValueNumber < 100
   );
-  let tournamentsCount = isValidNumber ? inputValueNumber : null;
+  let tournamentsCountValue = isValidNumber ? inputValueNumber : null;
 
   handleDisplayValidity(inputNode, isValidNumber);
-  hydrateFormModel("tournamentsCount", tournamentsCount, isValidNumber);
+  hydrateFormModel("tournamentsCount", tournamentsCountValue, isValidNumber);
 }
 
 /**
@@ -102,11 +102,11 @@ export function tournamentsCount(event) {
  */
 
 export function acceptCgu({ target: inputNode }) {
-  const acceptCgu = inputNode.checked;
-  const isCguValid = acceptCgu;
+  const acceptCguValue = inputNode.checked;
+  const isCguValid = acceptCguValue;
 
-  handleDisplayValidity(inputNode, acceptCgu);
-  hydrateFormModel("acceptCgu", acceptCgu, isCguValid);
+  handleDisplayValidity(inputNode, acceptCguValue);
+  hydrateFormModel("acceptCgu", acceptCguValue, isCguValid);
 }
 
 /**
@@ -132,16 +132,16 @@ export function nextEventWarning({ target: inputNode }) {
 
 export function location({ target: inputNode }) {
   const hasChosenLocation = inputNode.checked || formModel.location.value !== null;
-  let location = null;
+  let locationValue = null;
 
   if (inputNode.checked) {
-    location = inputNode.value;
+    locationValue = inputNode.value;
   } else if (formModel.location.value !== null) {
-    location = formModel.location.value;
+    locationValue = formModel.location.value;
   }
 
-  const isLocationValid = hasChosenLocation && location !== null;
+  const isLocationValid = hasChosenLocation && locationValue !== null;
 
   handleDisplayValidity(inputNode, hasChosenLocation);
-  hydrateFormModel("location", location, isLocationValid);
+  hydrateFormModel("location", locationValue, isLocationValid);
 }
