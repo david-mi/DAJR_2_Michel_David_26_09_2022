@@ -111,16 +111,25 @@ export function handleFormSubmit(event) {
 }
 
 /**
- * prevent writing anything other than numbers in the concerned input
- * Backspace, ArrowLeft & ArrowRight are still accepted
+ * prevent writing anything other than numbers in the concerned input on keydown
+ * prevent writing if new input will be < 0 or > 100
+ * Backspace, ArrowLeft & ArrowRight for navigation are accepted
  * 
  * @param {KeyboardEvent} event
  */
 
 export function pressOnlyNumbers(event) {
   const nonPrintableKeys = ["Backspace", "ArrowLeft", "ArrowRight"];
+  const isKeyNumber = isNaN(parseInt(event.key)) === false;
 
-  if (isNaN(event.key) && nonPrintableKeys.includes(event.key) === false) {
+  if (isKeyNumber) {
+    const concatNumbers = String(dom.formTournamentCountsInput.value) + event.key;
+    const newNumber = parseInt(concatNumbers, 10);
+
+    if (newNumber < 0 || newNumber > 100) {
+      event.preventDefault();
+    }
+  } else if (nonPrintableKeys.includes(event.key) === false) {
     event.preventDefault();
   }
 }

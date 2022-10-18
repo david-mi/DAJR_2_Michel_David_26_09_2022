@@ -88,11 +88,7 @@ export function tournamentsCount(event) {
     inputValueNumber >= 0 &&
     inputValueNumber < 100
   );
-  let tournamentsCount = isValidNumber ? inputValueNumber : formModel.tournamentsCount.value;
-
-  if (isValidNumber === false && event.data !== null) {
-    inputNode.value = formModel.tournamentsCount.value;
-  }
+  let tournamentsCount = isValidNumber ? inputValueNumber : null;
 
   handleDisplayValidity(inputNode, isValidNumber);
   hydrateFormModel("tournamentsCount", tournamentsCount, isValidNumber);
