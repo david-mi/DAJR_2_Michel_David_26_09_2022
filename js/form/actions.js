@@ -126,7 +126,7 @@ export function pressOnlyNumbers(event) {
     const concatNumbers = String(dom.formTournamentCountsInput.value) + event.key;
     const newNumber = parseInt(concatNumbers, 10);
 
-    if (newNumber < 0 || newNumber > 100) {
+    if (newNumber < 0 || newNumber >= 100) {
       event.preventDefault();
     }
   } else if (nonPrintableKeys.includes(event.key) === false) {
